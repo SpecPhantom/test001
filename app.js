@@ -11,16 +11,42 @@
 var img1 = document.createElement("img1")
 var img2 = document.createElement("img2")
 var NowImg = 1 
-function ReplacingImage()
+var OnClickedtimes = 0;
+
+
+// document.getElementById("Blow!").onclick;
+
+function BOnClicked()
 {
-    // console.log(i)
-    if(NowImg === 1)
+    // console.log(BOnClicked)
+    if(OnClickedtimes < 3)
     {
-    img1 = document.getElementById("pic1").src = "photo-1601425276965-bdb69f1f3977.jpg"
-    NowImg = 2;
+        ReplacingBlowImage()
+        OnClickedtimes++;
+        setTimeout(ReplacingImageDefault,3000)
     }else
-    document.getElementById("pic1").src = "photo-1594568284297-7c64464062b1.jpg"
-    NowImg = 1;
+    {
+        ReplacingBlowImage()
+        setTimeout(ReplacingOutImage(),10000)
+    }
+
+    console.log(OnClickedtimes)
+}
+
+function ReplacingBlowImage()
+{
+
+    document.getElementById("CakeBday").src = "Bday_cake(blow) (2).gif"
+}
+
+function ReplacingOutImage()
+{
+    document.getElementById("CakeBday").src = "Bday_cake(out) (1).gif"
+}
+
+function ReplacingImageDefault()
+{
+    document.getElementById("CakeBday").src = "CakeBday_idle.gif"
 }
 // for(var i = 0;i< 5;i++)
 // {
